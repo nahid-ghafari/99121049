@@ -7,13 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- exercise if -->
 <?php
-    $message="hello world 'this is string'";
-    $name="Nahid Ghafari";
-    echo('hello world');
+    $message="first meeting with Nahid Ghafari";
+    //$is_read=false;
+    $is_read=true;
+    if($is_read)
+    {
+        $message=" first meeting with Nahid Ghafari was done.";
+    }
+    else{
+        $message=" I must set meeting with Nahid Ghafari.";
+    }
     ?>
-    <h1>this is the first session coding</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <h3>Hello<?php echo($name) ?></h3>
+    <h1>this is the second session coding</h1>
+    <h3>Hello<?= $message ?></h3>
 </body>
 </html>

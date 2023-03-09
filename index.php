@@ -14,39 +14,48 @@
             'title' => 'The first book',
             'Author' => 'Author1',
             'publish_date' => '1395',
-            'price' => '100000'
+            'price' => 100000
         ],
         [
             'title' => 'The new first book',
             'Author' => 'Author1',
             'publish_date' => '1395',
-            'price' => '100000'
+            'price' => 120000
         ],
         [
             'title' => 'The second book',
             'Author' => 'The second Author',
             'publish_date' => '1399',
-            'price' => '200000'
+            'price' => 150000
         ],
         [
             'title' => 'The third book',
             'Author' => 'The third Author',
             'publish_date' => '1395',
-            'price' => '150000'
+            'price' => 150000
         ]
     ];
-    function filterByAuthor($books,$author)
+    function filter($books,$fn)
     {
         $filteredbook = [];
         foreach($books as $book)
         {
-            if($book['Author']==$author)
+            if($fn($book))
             {
                 $filteredbook[] = $book;
             }
         }
         return $filteredbook;
     }
+    $filteredbook = filter($books,function($book){
+        if($book['price'] <=150000)
+        {
+            return true;
+        }
+        return false;
+
+    })
+
     ?>
     <h3>Books list</h3>
     <table class="table table-bordered table-dark">
@@ -57,14 +66,15 @@
             <th>Price</th>
         </thead>
         <tbody>
-        <?php foreach(filterByAuthor($books,'The third Author') as $book): ?>
+        <?php foreach($filteredbook as $book): ?>
             <tr>
                 <?php foreach($book as $key=>$value): ?>
                     <td><?= $value ?></td>
                 <?php endforeach ?>    
             </tr>    
-
+        
         <?php endforeach ?>
         </tbody>
     </table>
 </body>
+</html>

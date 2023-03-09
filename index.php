@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- exercise array -->
-    <?php
+    <?php 
     $books = [
        [
             "title" => " The first book",
@@ -39,8 +39,8 @@
     //die(); it means the end .stop
     ?>
     <h1> This is the third session coding</h1>
-    <h3>book list :</h3>
-    <table>
+    <h3>Books list :</h3>
+    <!-- <table>
         <?php foreach($books as $key => $value){ ?>
             <tr>
                 <td>
@@ -49,10 +49,17 @@
 
                 </td>
             </tr>
-            
-        <?php }?>
+
+        <?php }?>   
+    </table> -->
+    <table>
+         <?php foreach ($books as $value){ ?>
+             <tr>
+                  <td><?php var_dump($value)?> </td>
+             </tr>
+         <?php }?>
+    </table>    
         
-        
-    </table>
+
 </body>
 </html>

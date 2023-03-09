@@ -7,20 +7,52 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- exercise if -->
-<?php
-    $message="first meeting with Nahid Ghafari";
-    //$is_read=false;
-    $is_read=true;
-    if($is_read)
-    {
-        $message=" first meeting with Nahid Ghafari was done.";
-    }
-    else{
-        $message=" I must set meeting with Nahid Ghafari.";
-    }
+    <!-- exercise array -->
+    <?php
+    $books = [
+       [
+            "title" => " The first book",
+            "Author" =>" The first author",
+            "Publish-date" =>" 1395",
+            "price" =>" 100000",
+
+
+       ],
+       [
+            "title" => " The second book",
+            "Author" =>" The second author",
+            "Publish-date" =>" 1399",
+            "price" =>" 200000",
+
+
+       ],
+       [
+            "title" => " The third book",
+            "Author" =>" The third author",
+            "Publish-date" =>" 1396",
+            "price" =>" 300000",
+
+       ],
+
+    ];
+    var_dump($books);
+    //die(); it means the end .stop
     ?>
-    <h1>this is the second session coding</h1>
-    <h3>Hello<?= $message ?></h3>
+    <h1> This is the third session coding</h1>
+    <h3>book list :</h3>
+    <table>
+        <?php foreach($books as $key => $value){ ?>
+            <tr>
+                <td>
+                    <?= $key ?>
+                    <?php var_dump($value) ?>
+
+                </td>
+            </tr>
+            
+        <?php }?>
+        
+        
+    </table>
 </body>
 </html>

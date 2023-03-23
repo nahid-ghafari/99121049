@@ -1,44 +1,74 @@
 <?php
-    $books = [
-        [
-            'title' => 'The first book',
-            'Author' => 'Author1',
-            'publish_date' => '1395',
-            'price' => 100000
-        ],
-        [
-            'title' => 'The new first book',
-            'Author' => 'Author1',
-            'publish_date' => '1395',
-            'price' => 120000
-        ],
-        [
-            'title' => 'The second book',
-            'Author' => 'The second Author',
-            'publish_date' => '1399',
-            'price' => 150000
-        ],
-        [
-            'title' => 'The third book',
-            'Author' => 'The third Author',
-            'publish_date' => '1395',
-            'price' => 150000
-        ]
-    ];
-    function filter($books,$fn)
-    {
-        $filteredbook = [];
-        foreach($books as $book)
-        {
-            if($fn($book))
-            {
-                $filteredbook[] = $book;
+//connect to postgres and creat db'web'and table 'students'
+    function connectToDB() {
+
+        $host= 'localhost';
+        $db = 'web';
+        $user = 'postgres';
+        $password = 'password'; // enter  your password
+    
+        try {
+            $dsn = "pgsql:host=" . $host . ";port=5432;dbname=" . $db . ";";
+            $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+            
+            if ($pdo) {
+                echo "Connected to the $db database successfully!";
+            }
+    
+            return $pdo;
+        } catch (PDOException $e) {
+
+            die($e->getMessage());
+
+        } finally {
+
+            if ($pdo) {
+                $pdo = null;
             }
         }
-        return $filteredbook;
     }
-    $filteredbook = filter($books,function($book){
-        if($book['price'] <=150000)
+        
+    
+    $students = [
+        [
+            'Name' => 'Yasi Ghafari',
+            'Age' => '21',
+            'Id' => '1234',
+            'Major' => 'engineering'
+        ],
+        [
+            'Name' => 'Ahmad Gholami',
+            'Age' => '20',
+            'Id' => '4321',
+            'Major' => 'art'
+        ],
+        [
+            'Name' => 'Mobina Abbasi',
+            'Age' => '23',
+            'Id' => '4567',
+            'Major' => 'engineering'
+        ],
+        [
+            'Name' => 'Reza Sohrabi',
+            'Age' => '22',
+            'Id' => '7890',
+            'Major' => 'medical'
+        ]
+    ];
+    function filter($students,$fn)
+    {
+        $filteredstudent = [];
+        foreach($students as $student)
+        {
+            if($fn($student))
+            {
+                $filteredstudent[] = $student;
+            }
+        }
+        return $filteredstudent;
+    }
+    $filteredstudent = filter($students,function($student){
+        if($student['Age'] <=23)
         {
             return true;
         }
@@ -48,4 +78,3 @@
     require("index.show.php");
 
 ?>
-    

@@ -9,23 +9,29 @@
 </head>
 <body>
 
-  <h3>Books list</h3>
+  <h3>Students list</h3>
   <table class="table table-bordered table-dark">
         <thead>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publish Date</th>
-            <th>Price</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Id</th>
+            <th>Major</th>
         </thead>
-        <tbody>
-        <?php foreach($filteredbook as $book): ?>
+    
+        <?php foreach($filteredstudent as $student): ?>
             <tr>
-                <?php foreach($book as $key=>$value): ?>
+                <?php foreach($student as $key=>$value): ?>
                     <td><?= $value ?></td>
                 <?php endforeach ?>    
             </tr>    
         <?php endforeach ?>
         </tbody>
     </table>
-</body>
-</html>
+    <tbody>
+    <div>
+        <?php 
+            $db = connectToDB();
+        ?>
+    </div>
+ </body>
+ </html>

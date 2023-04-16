@@ -28,10 +28,10 @@
         </tbody>
     </table>
     <tbody>
-    <div>
+    <!-- <div>
         <?php 
             $db = connectToDB();
         ?>
-    </div>
+    </div> -->
  </body>
  </html>

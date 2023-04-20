@@ -3,10 +3,13 @@
     include 'functions.php';
 
     require('Database.php');
-    $db = new Database();
-    $students = $db ->query("SELECT * FROM students WHERE Name='Ahmad Gholami'")
+    $config=require('config.php');
+    $db = new Database($config,'root','');
+    $id = $_GET['id'];
+    $query="SELECT * FROM users WHERE id=:id";
+    $user = $db ->query($query,['id'=>$id])
     ->fetch(PDO::FETCH_ASSOC);
-    dd($students);
+    dd($user);
     //dd($students['Name']);
     //$students = $db ->query("SELECT * FROM students WHERE Name LIKE '%Yasi%'")->fetchAll();
 

@@ -3,6 +3,6 @@ return[
     'host'=>'localhost',
     'port'=>'3306',
     'dbname'=>'web',
-    'charset'=>'utf8mb4',
+    'charset'=>'utf8mb4'
 
 ];

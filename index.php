@@ -41,52 +41,55 @@
     //  }
     //  exit("Connected successfully");
     
-    $students = [
-        [
-            'Name' => 'Yasi Ghafari',
-            'Age' => 21,
-            'Id' => 1234,
-            'Major' => 'engineering'
-        ],
-        [
-            'Name' => 'Ahmad Gholami',
-            'Age' => 20,
-            'Id' => 4321,
-            'Major' => 'art'
-        ],
-        [
-            'Name' => 'Mobina Abbasi',
-            'Age' => 23,
-            'Id' => 4567,
-            'Major' => 'engineering'
-        ],
-        [
-            'Name' => 'Reza Sohrabi',
-            'Age' => 22,
-            'Id' => 7890,
-            'Major' => 'medical'
-        ]
-    ];
-    function filter($students,$fn)
-    {
-        $filteredstudent = [];
-        foreach($students as $student)
-        {
-            if($fn($student))
-            {
-                $filteredstudent[] = $student;
-            }
-        }
-        return $filteredstudent;
-    }
-    $filteredstudent = filter($students,function($student){
-        if($student['Age'] <=23)
-        {
-            return true;
-        }
-        return false;
+    // $students = [
+    //     [
+    //         'Name' => 'Yasi Ghafari',
+    //         'Age' => 21,
+    //         'Id' => 1234,
+    //         'Major' => 'engineering'
+    //     ],
+    //     [
+    //         'Name' => 'Ahmad Gholami',
+    //         'Age' => 20,
+    //         'Id' => 4321,
+    //         'Major' => 'art'
+    //     ],
+    //     [
+    //         'Name' => 'Mobina Abbasi',
+    //         'Age' => 23,
+    //         'Id' => 4567,
+    //         'Major' => 'engineering'
+    //     ],
+    //     [
+    //         'Name' => 'Reza Sohrabi',
+    //         'Age' => 22,
+    //         'Id' => 7890,
+    //         'Major' => 'medical'
+    //     ]
+    // ];
+    // function filter($students,$fn)
+    // {
+    //     $filteredstudent = [];
+    //     foreach($students as $student)
+    //     {
+    //         if($fn($student))
+    //         {
+    //             $filteredstudent[] = $student;
+    //         }
+    //     }
+    //     return $filteredstudent;
+    // }
+    // $filteredstudent = filter($students,function($student){
+    //     if($student['Age'] <=23)
+    //     {
+    //         return true;
+    //     }
+    //     return false;
 
-    });
-    require("index.show.php");
+    // });
+    // require("index.show.php");
+
+    require('functions.php');
+    require('route.php');
 
 ?>

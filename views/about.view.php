@@ -1,0 +1,11 @@
+<?php 
+require('partials/head.php');
+require('partials/banner.php');
+require('partials/nav.php');
+?>
+<main>
+    About
+</main>
+<?php
+require('partials/footer.php'); 
+?>

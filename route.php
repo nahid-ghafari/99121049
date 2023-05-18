@@ -1,10 +1,13 @@
 <?php 
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+//dd($uri);
 $routes = [
     '/' => './controller/HomePageController.php',
     '/about' => './controller/AboutController.php',
-    '/contact' => './controller/ContactController.php'
+    '/contact' => './controller/ContactController.php',
+    '/notes' => './controller/NotesController.php',
+    '/note' => './controller/NoteController.php',
 ];
 function routeToController($uri, $routes)
 {

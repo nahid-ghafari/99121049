@@ -19,6 +19,9 @@
                         <?php endif ?>
                         <a href="/contact"
                            class="<?= urlIs('/contact') ? 'text-white':'' ?>"hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="/notes"
+                           class="<?= urlIs('/notes') ? 'text-white':'' ?>"hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+                           
                     </div>
                 </div>
             </div>

@@ -10,15 +10,15 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="/"
-                           class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                           class="<?= urlIs('/') ? 'text-white':'' ?>"hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         <a href="/about"
-                           class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                           class="<?= urlIs('/about') ? 'text-white':'' ?> "hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <?php if ($_SESSION['user'] ?? false) : ?>
                             <a href="/notes"
-                               class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+                               class="<?= urlIs('/notes') ? 'text-white':'' ?>"hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Notes</a>
                         <?php endif ?>
                         <a href="/contact"
-                           class="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                           class="<?= urlIs('/contact') ? 'text-white':'' ?>"hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
             </div>

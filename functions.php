@@ -6,4 +6,8 @@ function dd($in)
     var_dump($in);
     die;
 }
+function urlIs($value)
+    {
+        return $_SERVER['REQUEST_URI']==$value;
+    }
 ?>

@@ -89,6 +89,7 @@
     // });
     // require("index.show.php");
 
+    require('Response.php');
     require('functions.php');
     //var_dump(urlIs('/'));
     //die();
